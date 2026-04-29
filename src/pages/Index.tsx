@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
 import {
   ArrowDownToLine,
   BriefcaseBusiness,
@@ -237,7 +237,7 @@ const Index = () => {
       <section className="mx-auto max-w-7xl px-4 py-12 md:px-6">
         <div className="paper-card overflow-hidden rounded-xl p-5">
           <div className="flex items-center gap-2 font-display text-sm text-muted-foreground"><Github className="size-4" /> GitHub contribution widget</div>
-          <div className="mt-5 grid grid-cols-14 gap-1">
+          <div className="mt-5 grid grid-cols-[repeat(14,minmax(0,1fr))] gap-1">
             {Array.from({ length: 98 }).map((_, index) => (
               <div key={index} className="aspect-square rounded-sm border border-border bg-secondary" style={{ opacity: 0.35 + ((index * 7) % 9) / 12 }} />
             ))}
@@ -257,7 +257,7 @@ const Index = () => {
   );
 };
 
-const Section = ({ id, title, icon, children }: { id: string; title: string; icon: React.ReactNode; children: React.ReactNode }) => (
+const Section = ({ id, title, icon, children }: { id: string; title: string; icon: ReactNode; children: ReactNode }) => (
   <section id={id} className="section-rule mx-auto max-w-7xl px-4 py-14 md:px-6 md:py-20">
     <div className="mb-8 flex items-center gap-3">
       <span className="flex h-10 w-10 items-center justify-center rounded-md border border-border bg-card shadow-paper">{icon}</span>
@@ -267,7 +267,7 @@ const Section = ({ id, title, icon, children }: { id: string; title: string; ico
   </section>
 );
 
-const Widget = ({ icon, title, value }: { icon: React.ReactNode; title: string; value: string }) => (
+const Widget = ({ icon, title, value }: { icon: ReactNode; title: string; value: string }) => (
   <div className="paper-card rounded-xl p-4 transition-transform hover:-translate-y-1">
     <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-md border border-border bg-secondary">{icon}</div>
     <p className="text-xs uppercase text-muted-foreground">{title}</p>
@@ -275,7 +275,7 @@ const Widget = ({ icon, title, value }: { icon: React.ReactNode; title: string; 
   </div>
 );
 
-const Bullet = ({ children }: { children: React.ReactNode }) => (
+const Bullet = ({ children }: { children: ReactNode }) => (
   <div className="paper-card flex items-start gap-3 rounded-lg p-4"><Sparkles className="mt-0.5 size-4 shrink-0 text-accent" /><span>{children}</span></div>
 );
 
@@ -292,7 +292,7 @@ const Timeline = ({ title, period, items }: { title: string; period: string; ite
   </div>
 );
 
-const ContactLink = ({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) => (
+const ContactLink = ({ icon, label, value }: { icon: ReactNode; label: string; value: string }) => (
   <a href="#contact" className="paper-card rounded-xl p-5 transition-all hover:-translate-y-1 hover:shadow-lift">
     <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-md border border-border bg-secondary">{icon}</div>
     <p className="text-sm text-muted-foreground">{label}</p>
