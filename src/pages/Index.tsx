@@ -39,7 +39,7 @@ const aboutPoints = [
 const projects = [
   {
     title: "Noir AI",
-    description: "AI assistant web app inspired by tools like Claude, ChatGPT, and Perplexity, designed for fast prompts, clean responses, and focused research workflows.",
+    description: "AI assistant web app inspired by Claude, ChatGPT, and Perplexity, designed for fast prompts, clean responses, and focused research workflows.",
     meta: "Solo development",
     url: "https://www.rlabs-studio.web.id",
     tags: ["AI Assistant", "Chat UI", "Research"],
@@ -197,15 +197,15 @@ const Index = () => {
       </Section>
 
       <Section id="projects" title="Projects" icon={<Code2 />}>
-        <div className="columns-1 gap-4 sm:columns-2 lg:columns-3">
+        <div className="grid auto-rows-[0.5rem] grid-cols-1 gap-4 md:grid-cols-6">
           {projects.map((project) => (
-            <a key={project.title} href={project.url} target="_blank" rel="noreferrer" className="paper-card group mb-4 inline-block w-full break-inside-avoid rounded-xl p-5 transition-all duration-300 hover:-translate-y-1 hover:-rotate-1 hover:shadow-lift">
+            <a key={project.title} href={project.url} target="_blank" rel="noreferrer" className="paper-card group row-span-24 flex min-h-64 flex-col rounded-xl p-5 transition-all duration-300 hover:-translate-y-1 hover:-rotate-1 hover:shadow-lift md:col-span-2 first:md:col-span-3 first:md:row-span-28 last:md:col-span-3 last:md:row-span-20">
               <div className="flex items-start justify-between gap-4">
                 <h3 className="font-display text-xl leading-snug">{project.title}</h3>
                 <ExternalLink className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5" />
               </div>
               <p className="mt-3 leading-7 text-muted-foreground">{project.description}</p>
-              <p className="mt-4 font-display text-sm">{project.meta}</p>
+              <p className="mt-auto pt-5 font-display text-sm">{project.meta}</p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {project.tags.map((tag) => <span key={tag} className="rounded-md border border-border bg-secondary px-2 py-1 text-xs">{tag}</span>)}
               </div>
