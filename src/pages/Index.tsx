@@ -38,28 +38,25 @@ const aboutPoints = [
 
 const projects = [
   {
-    title: "Automatic Soil Moisture Monitoring System",
-    description: "Smart agriculture monitoring project with sensor integration, programming logic, calibration, and testing.",
-    meta: "Awarded 2nd Place Regency Level",
-    tags: ["IoT", "Sensors", "Testing"],
+    title: "Rlabs Studio",
+    description: "Studio website with a clean digital presence, responsive pages, and focused presentation for creative web services.",
+    meta: "Solo development",
+    url: "https://www.rlabs-studio.web.id",
+    tags: ["Website", "Responsive", "Branding"],
   },
   {
-    title: "Personal Portfolio Website",
-    description: "A clean developer profile system designed around concise storytelling, project proof, and fast contact paths.",
-    meta: "React + Tailwind CSS",
-    tags: ["Portfolio", "UI", "Responsive"],
+    title: "Noir Code",
+    description: "Modern developer-oriented web project with minimalist interface, structured content, and production-ready layout.",
+    meta: "Solo development",
+    url: "https://www.noir-code.biz.id",
+    tags: ["Web App", "UI", "Frontend"],
   },
   {
-    title: "SaaS Landing Page Projects",
-    description: "Conversion-focused landing pages with reusable UI sections, clear hierarchy, and optimized mobile layouts.",
-    meta: "Freelance builds",
-    tags: ["Landing", "Components", "SEO"],
-  },
-  {
-    title: "AI Integration Projects",
-    description: "Experiments connecting modern apps to AI APIs, local LLM workflows, and practical automation interfaces.",
-    meta: "Ollama + API integrations",
-    tags: ["AI", "API", "Automation"],
+    title: "Ravora",
+    description: "Responsive product-style web experience built with polished sections, clear hierarchy, and smooth user flow.",
+    meta: "Solo development",
+    url: "https://ravora.vercel.app",
+    tags: ["Landing Page", "React", "Deployment"],
   },
 ];
 
@@ -202,7 +199,7 @@ const Index = () => {
       <Section id="projects" title="Projects" icon={<Code2 />}>
         <div className="grid gap-4 md:grid-cols-2">
           {projects.map((project) => (
-            <article key={project.title} className="paper-card group rounded-xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
+            <a key={project.title} href={project.url} target="_blank" rel="noreferrer" className="paper-card group rounded-xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
               <div className="flex items-start justify-between gap-4">
                 <h3 className="font-display text-xl leading-snug">{project.title}</h3>
                 <ExternalLink className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5" />
@@ -212,7 +209,7 @@ const Index = () => {
               <div className="mt-4 flex flex-wrap gap-2">
                 {project.tags.map((tag) => <span key={tag} className="rounded-md border border-border bg-secondary px-2 py-1 text-xs">{tag}</span>)}
               </div>
-            </article>
+            </a>
           ))}
         </div>
       </Section>
