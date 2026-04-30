@@ -38,25 +38,25 @@ const aboutPoints = [
 
 const projects = [
   {
-    title: "Rlabs Studio",
-    description: "Studio website with a clean digital presence, responsive pages, and focused presentation for creative web services.",
+    title: "Noir AI",
+    description: "AI assistant web app inspired by tools like Claude, ChatGPT, and Perplexity, designed for fast prompts, clean responses, and focused research workflows.",
     meta: "Solo development",
     url: "https://www.rlabs-studio.web.id",
-    tags: ["Website", "Responsive", "Branding"],
+    tags: ["AI Assistant", "Chat UI", "Research"],
   },
   {
     title: "Noir Code",
-    description: "Modern developer-oriented web project with minimalist interface, structured content, and production-ready layout.",
+    description: "SaaS platform that helps users create websites automatically with generated layouts, streamlined prompts, and a production-focused web builder flow.",
     meta: "Solo development",
     url: "https://www.noir-code.biz.id",
-    tags: ["Web App", "UI", "Frontend"],
+    tags: ["SaaS", "Website Builder", "Automation"],
   },
   {
     title: "Ravora",
-    description: "Responsive product-style web experience built with polished sections, clear hierarchy, and smooth user flow.",
+    description: "Security-focused web tool for detecting phishing links, helping users check suspicious URLs before opening them.",
     meta: "Solo development",
     url: "https://ravora.vercel.app",
-    tags: ["Landing Page", "React", "Deployment"],
+    tags: ["Security", "Phishing Detection", "URL Scanner"],
   },
 ];
 
@@ -197,9 +197,9 @@ const Index = () => {
       </Section>
 
       <Section id="projects" title="Projects" icon={<Code2 />}>
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="columns-1 gap-4 sm:columns-2 lg:columns-3">
           {projects.map((project) => (
-            <a key={project.title} href={project.url} target="_blank" rel="noreferrer" className="paper-card group rounded-xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
+            <a key={project.title} href={project.url} target="_blank" rel="noreferrer" className="paper-card group mb-4 inline-block w-full break-inside-avoid rounded-xl p-5 transition-all duration-300 hover:-translate-y-1 hover:-rotate-1 hover:shadow-lift">
               <div className="flex items-start justify-between gap-4">
                 <h3 className="font-display text-xl leading-snug">{project.title}</h3>
                 <ExternalLink className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5" />
