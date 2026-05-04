@@ -1,5 +1,7 @@
 import { useEffect, useState, useRef } from "react";
-import { Search, Sun, Moon, BadgeCheck, Eye, Download, Briefcase, ExternalLink, Github, Play, Pause, Instagram } from "lucide-react";
+import { Search, Sun, Moon, BadgeCheck, Eye, Download, Briefcase, ExternalLink, Github, Play, Pause, Instagram, Code2 } from "lucide-react";
+import { FaReact, FaNodeJs, FaGitAlt, FaGithub, FaFigma } from "react-icons/fa";
+import { SiTypescript, SiTailwindcss, SiNextdotjs, SiSupabase, SiVite, SiLinux, SiJavascript, SiHtml5, SiCss3 } from "react-icons/si";
 import { Link } from "react-router-dom";
 import {
   DropdownMenu,
@@ -29,6 +31,7 @@ const translations = {
     downloadCV: "Unduh CV",
     viewCV: "Lihat CV",
     about: "Tentang",
+    techStack: "Tech Stack",
     featuredProject: "Proyek Unggulan",
     connect: "Ayo Terhubung",
     name: "Nama",
@@ -59,6 +62,7 @@ const translations = {
     downloadCV: "Download CV",
     viewCV: "View CV",
     about: "About",
+    techStack: "Tech Stack",
     featuredProject: "Featured Project",
     connect: "Let's Connect",
     name: "Name",
@@ -326,6 +330,33 @@ const Index = () => {
               <li key={index} className="pl-2">{item}</li>
             ))}
           </ul>
+
+          {/* Tech Stack Section */}
+          <div className="mt-12 pt-8 border-t border-border">
+            <h3 className="text-xl font-medium text-foreground mb-6 flex items-center gap-2">
+              <Code2 className="w-5 h-5" />
+              {t.techStack}
+            </h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+              {[
+                { icon: FaReact, name: "React", color: "text-[#61DAFB]" },
+                { icon: SiTypescript, name: "TypeScript", color: "text-[#3178C6]" },
+                { icon: SiTailwindcss, name: "Tailwind CSS", color: "text-[#06B6D4]" },
+                { icon: SiNextdotjs, name: "Next.js", color: "text-foreground" },
+                { icon: FaNodeJs, name: "Node.js", color: "text-[#339933]" },
+                { icon: SiSupabase, name: "Supabase", color: "text-[#3ECF8E]" },
+                { icon: FaGitAlt, name: "Git", color: "text-[#F05032]" },
+                { icon: SiLinux, name: "Linux", color: "text-foreground" },
+                { icon: FaFigma, name: "Figma", color: "text-[#F24E1E]" },
+                { icon: SiVite, name: "Vite", color: "text-[#646CFF]" },
+              ].map((tech, i) => (
+                <div key={i} className="flex flex-col items-center justify-center p-4 border border-border/50 rounded-xl bg-secondary/20 hover:bg-secondary/60 hover:-translate-y-1 hover:shadow-sm transition-all gap-3 group cursor-default">
+                  <tech.icon className={`w-8 h-8 opacity-80 group-hover:opacity-100 ${tech.color} group-hover:scale-110 transition-all`} />
+                  <span className="text-xs font-medium text-muted-foreground group-hover:text-foreground transition-colors">{tech.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
 
           {/* Best Project Section */}
           <div className="mt-12 pt-8 border-t border-border">
