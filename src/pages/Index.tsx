@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { Search, Sun, Moon, BadgeCheck, Eye, Download, Briefcase, ExternalLink, Github, Play, Pause, Instagram, Code2, Award } from "lucide-react";
+import { Search, Sun, Moon, BadgeCheck, Eye, Download, Briefcase, ExternalLink, Github, Play, Pause, Instagram, Code2, Award, Info } from "lucide-react";
 import { FaReact, FaNodeJs, FaGitAlt, FaGithub, FaFigma } from "react-icons/fa";
 import { SiTypescript, SiTailwindcss, SiNextdotjs, SiSupabase, SiVite, SiLinux, SiJavascript, SiHtml5, SiCss3 } from "react-icons/si";
 import { Link } from "react-router-dom";
@@ -54,6 +54,8 @@ const translations = {
     placeholderName: "Nama Anda",
     placeholderEmail: "email@anda.com",
     placeholderMessage: "Bagaimana saya bisa membantu Anda?",
+    migrationNoticeTitle: "Perhatian",
+    migrationNotice: "Web portofolio ini adalah versi sederhana yang akan dimigrasi. Jika menang lomba, tampilan akan diganti dengan web yang lebih interaktif!",
   },
   en: {
     home: "Home",
@@ -86,6 +88,8 @@ const translations = {
     placeholderName: "Your Name",
     placeholderEmail: "your@email.com",
     placeholderMessage: "How can I help you?",
+    migrationNoticeTitle: "Notice",
+    migrationNotice: "This portfolio web is a simple version that will be migrated. If it wins the competition, the view will be replaced with a more interactive one!",
   }
 };
 
@@ -111,6 +115,7 @@ const Index = () => {
       setLanguage(savedLang);
       const isTourCompleted = localStorage.getItem("tour-completed");
       if (!isTourCompleted) {
+        localStorage.setItem("tour-completed", "true");
         setTimeout(() => {
           window.dispatchEvent(new CustomEvent("start-tour"));
         }, 1000);
@@ -125,6 +130,7 @@ const Index = () => {
     
     const isTourCompleted = localStorage.getItem("tour-completed");
     if (!isTourCompleted) {
+      localStorage.setItem("tour-completed", "true");
       setTimeout(() => {
         window.dispatchEvent(new CustomEvent("start-tour"));
       }, 500);
@@ -207,6 +213,15 @@ const Index = () => {
 
         {/* Header */}
         <Header t={t} isDark={isDark} setIsDark={setIsDark} />
+
+        {/* Migration Notice */}
+        <div className="bg-amber-50 dark:bg-amber-950/30 border-b border-amber-200 dark:border-amber-900/50 px-6 py-3 flex gap-3 text-[13px] md:text-sm text-amber-800 dark:text-amber-200/90 items-start">
+          <Info className="w-5 h-5 shrink-0 mt-0.5 text-amber-600 dark:text-amber-400" />
+          <div className="leading-relaxed">
+            <span className="font-semibold">{t.migrationNoticeTitle}: </span>
+            {t.migrationNotice}
+          </div>
+        </div>
 
         {/* Dotted Grid Area */}
         <div className="h-32 dotted-pattern w-full border-b border-border"></div>
