@@ -8,6 +8,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { CVModal } from "@/components/CVModal";
+import PageTransition from "@/components/PageTransition";
+import { StatusModal } from "@/components/StatusModal";
 import {
   Dialog,
   DialogContent,
@@ -22,6 +24,7 @@ const translations = {
     education: "Pendidikan",
     projects: "Proyek",
     gallery: "Galeri",
+    notes: "Catatan",
     more: "Lainnya",
     downloadCV: "Unduh CV",
     viewCV: "Lihat CV",
@@ -51,6 +54,7 @@ const translations = {
     education: "Education",
     projects: "Projects",
     gallery: "Gallery",
+    notes: "Notes",
     more: "More",
     downloadCV: "Download CV",
     viewCV: "View CV",
@@ -82,6 +86,7 @@ const Index = () => {
   const [cvModalOpen, setCvModalOpen] = useState(false);
   const [cvLang, setCvLang] = useState<"id" | "en" | null>(null);
   const [welcomeModalOpen, setWelcomeModalOpen] = useState(false);
+  const [statusModalOpen, setStatusModalOpen] = useState(false);
   const [language, setLanguage] = useState<"id" | "en">("id");
 
   const t = translations[language];
@@ -126,7 +131,8 @@ const Index = () => {
   }, [isDark]);
 
   return (
-    <div className="min-h-screen w-full relative py-12 px-4 md:px-8 bg-[#F5F5DC] dark:bg-background transition-colors duration-300">
+    <PageTransition>
+      <div className="min-h-screen w-full relative py-12 px-4 md:px-8 bg-[#F5F5DC] dark:bg-background transition-colors duration-300">
       {/* Dashed Grid */}
       <div
         className="absolute inset-0 z-0 pointer-events-none"
@@ -187,6 +193,12 @@ const Index = () => {
               <Link to="/education" className="hover:text-foreground transition-colors">{t.education}</Link>
               <Link to="/projects" className="hover:text-foreground transition-colors">{t.projects}</Link>
               <Link to="/gallery" className="hover:text-foreground transition-colors">{t.gallery}</Link>
+              <button 
+                onClick={() => window.dispatchEvent(new CustomEvent("open-note-modal"))}
+                className="hover:text-foreground transition-colors"
+              >
+                {t.notes}
+              </button>
               <DropdownMenu>
                 <DropdownMenuTrigger className="hover:text-foreground transition-colors flex items-center gap-1 outline-none">
                   {t.more} <span className="text-[10px]">▼</span>
@@ -250,10 +262,16 @@ const Index = () => {
               <BadgeCheck className="w-5 h-5 text-verified fill-verified text-verified-foreground" />
             </h1>
             <p className="text-muted-foreground text-[15px] mb-1.5">Junior Full-Stack Developer</p>
-            <p className="text-[13px] text-muted-foreground flex items-center gap-1.5 mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse block"></span>
-              {t.status}
-            </p>
+            <div className="flex flex-col gap-1 mb-4">
+              <div 
+                onClick={() => setStatusModalOpen(true)}
+                className="text-[13px] text-muted-foreground flex items-center gap-1.5 cursor-pointer hover:text-blue-500 transition-colors group w-max"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse block"></span>
+                {t.status}
+                <span className="ml-2 text-[9px] bg-blue-500 text-white px-1.5 py-0.5 rounded-full font-bold animate-bounce uppercase tracking-tighter">Click me!</span>
+              </div>
+            </div>
             <div className="flex flex-wrap items-center gap-3">
               <a 
                 href="/CV_I-Wayan-Radea.docx" 
@@ -452,6 +470,12 @@ const Index = () => {
         lang={cvLang} 
       />
 
+      <StatusModal 
+        isOpen={statusModalOpen}
+        onOpenChange={setStatusModalOpen}
+        language={language}
+      />
+
       {/* Language Selection Modal */}
       <Dialog open={welcomeModalOpen} onOpenChange={setWelcomeModalOpen}>
         <DialogContent className="sm:max-w-md" hideClose>
@@ -482,6 +506,7 @@ const Index = () => {
         </DialogContent>
       </Dialog>
     </div>
+</PageTransition>
   );
 };
 

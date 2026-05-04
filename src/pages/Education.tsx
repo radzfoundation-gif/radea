@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Search, Sun, Moon, GraduationCap, School, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
+import PageTransition from "@/components/PageTransition";
 
 const translations = {
   id: {
@@ -8,6 +9,7 @@ const translations = {
     education: "Pendidikan",
     projects: "Proyek",
     gallery: "Galeri",
+    notes: "Catatan",
     more: "Lainnya",
     educationTitle: "Riwayat Pendidikan",
     present: "Sekarang",
@@ -19,6 +21,7 @@ const translations = {
     education: "Education",
     projects: "Projects",
     gallery: "Gallery",
+    notes: "Notes",
     more: "More",
     educationTitle: "Education History",
     present: "Present",
@@ -45,7 +48,8 @@ const Education = () => {
   }, [isDark]);
 
   return (
-    <div className="min-h-screen w-full relative py-12 px-4 md:px-8 bg-[#F5F5DC] dark:bg-background transition-colors duration-300">
+    <PageTransition>
+      <div className="min-h-screen w-full relative py-12 px-4 md:px-8 bg-[#F5F5DC] dark:bg-background transition-colors duration-300">
       {/* Dashed Grid */}
       <div
         className="absolute inset-0 z-0 pointer-events-none"
@@ -106,6 +110,12 @@ const Education = () => {
               <Link to="/education" className="text-foreground font-medium">{t.education}</Link>
               <Link to="/projects" className="hover:text-foreground transition-colors">{t.projects}</Link>
               <Link to="/gallery" className="hover:text-foreground transition-colors">{t.gallery}</Link>
+              <button 
+                onClick={() => window.dispatchEvent(new CustomEvent("open-note-modal"))}
+                className="hover:text-foreground transition-colors"
+              >
+                {t.notes}
+              </button>
               <a href="#" className="hover:text-foreground transition-colors flex items-center gap-1">{t.more} <span className="text-[10px]">▼</span></a>
             </nav>
             <div 
@@ -184,6 +194,7 @@ const Education = () => {
 
       </div>
     </div>
+    </PageTransition>
   );
 };
 

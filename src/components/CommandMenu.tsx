@@ -11,6 +11,7 @@ import {
   GraduationCap,
   Briefcase,
   Image as ImageIcon,
+  MessageSquare,
   Sun,
   Moon,
 } from "lucide-react";
@@ -80,6 +81,10 @@ export function CommandMenu() {
           <CommandItem onSelect={() => runCommand(() => navigate("/gallery"))}>
             <ImageIcon className="mr-2 h-4 w-4" />
             <span>Gallery</span>
+          </CommandItem>
+          <CommandItem onSelect={() => runCommand(() => window.dispatchEvent(new CustomEvent("open-note-modal")))}>
+            <MessageSquare className="mr-2 h-4 w-4" />
+            <span>Notes</span>
           </CommandItem>
         </CommandGroup>
         <CommandSeparator />
