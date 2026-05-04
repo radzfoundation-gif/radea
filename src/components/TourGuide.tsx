@@ -9,15 +9,7 @@ export function TourGuide({ language }: TourGuideProps) {
   const [run, setRun] = useState(false);
 
   useEffect(() => {
-    const isTourCompleted = localStorage.getItem("tour-completed");
-    if (!isTourCompleted) {
-      // Small delay to let animations finish
-      setTimeout(() => {
-        setRun(true);
-      }, 1000);
-    }
-    
-    // Listen for custom event to trigger tour manually
+    // Listen for custom event to trigger tour manually or programmatically
     const startTour = () => setRun(true);
     window.addEventListener("start-tour", startTour);
     return () => window.removeEventListener("start-tour", startTour);

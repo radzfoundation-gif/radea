@@ -109,6 +109,12 @@ const Index = () => {
       setWelcomeModalOpen(true);
     } else {
       setLanguage(savedLang);
+      const isTourCompleted = localStorage.getItem("tour-completed");
+      if (!isTourCompleted) {
+        setTimeout(() => {
+          window.dispatchEvent(new CustomEvent("start-tour"));
+        }, 1000);
+      }
     }
   }, []);
 
@@ -116,6 +122,13 @@ const Index = () => {
     localStorage.setItem("preferred-language", lang);
     setLanguage(lang);
     setWelcomeModalOpen(false);
+    
+    const isTourCompleted = localStorage.getItem("tour-completed");
+    if (!isTourCompleted) {
+      setTimeout(() => {
+        window.dispatchEvent(new CustomEvent("start-tour"));
+      }, 500);
+    }
   };
 
   const togglePlay = () => {
