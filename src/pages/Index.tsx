@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { Search, Sun, Moon, BadgeCheck, Eye, Download, Briefcase, ExternalLink, Github, Play, Pause, Instagram, Code2 } from "lucide-react";
+import { Search, Sun, Moon, BadgeCheck, Eye, Download, Briefcase, ExternalLink, Github, Play, Pause, Instagram, Code2, Award } from "lucide-react";
 import { FaReact, FaNodeJs, FaGitAlt, FaGithub, FaFigma } from "react-icons/fa";
 import { SiTypescript, SiTailwindcss, SiNextdotjs, SiSupabase, SiVite, SiLinux, SiJavascript, SiHtml5, SiCss3 } from "react-icons/si";
 import { Link } from "react-router-dom";
@@ -34,6 +34,7 @@ const translations = {
     viewCV: "Lihat CV",
     about: "Tentang",
     techStack: "Tech Stack",
+    certificates: "Sertifikat",
     featuredProject: "Proyek Unggulan",
     connect: "Ayo Terhubung",
     name: "Nama",
@@ -65,6 +66,7 @@ const translations = {
     viewCV: "View CV",
     about: "About",
     techStack: "Tech Stack",
+    certificates: "Certificates",
     featuredProject: "Featured Project",
     connect: "Let's Connect",
     name: "Name",
@@ -324,6 +326,52 @@ const Index = () => {
                   <span className="text-xs font-medium text-muted-foreground group-hover:text-foreground transition-colors">{tech.name}</span>
                 </div>
               ))}
+            </div>
+          </div>
+
+          {/* Certificates Section */}
+          <div id="tour-certificates" className="mt-12 pt-8 border-t border-border">
+            <h3 className="text-xl font-medium text-foreground mb-6 flex items-center gap-2">
+              <Award className="w-5 h-5" />
+              {t.certificates}
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-secondary/20 border border-border/50 rounded-2xl overflow-hidden hover:shadow-md transition-shadow group relative">
+                <div className="aspect-[4/3] w-full bg-muted/50 flex items-center justify-center relative overflow-hidden">
+                  <img 
+                    src="/certificates/sertifikat1.jpg" 
+                    alt="Certificate 1" 
+                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <a href="/certificates/sertifikat1.jpg" target="_blank" rel="noreferrer" className="bg-background/90 text-foreground px-4 py-2 rounded-lg font-medium text-sm hover:bg-background transition-colors flex items-center gap-2">
+                      <Eye className="w-4 h-4" />
+                      View Certificate
+                    </a>
+                  </div>
+                </div>
+                <div className="p-4">
+                  <h4 className="font-medium text-foreground text-sm line-clamp-2">Acer Smart School Academy: Diskusi Tips Sukses Mendapatkan Beasiswa</h4>
+                </div>
+              </div>
+              <div className="bg-secondary/20 border border-border/50 rounded-2xl overflow-hidden hover:shadow-md transition-shadow group relative">
+                <div className="aspect-[4/3] w-full bg-muted/50 flex items-center justify-center relative overflow-hidden">
+                  <img 
+                    src="/certificates/sertifikat2.png" 
+                    alt="Certificate 2" 
+                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <a href="/certificates/sertifikat2.png" target="_blank" rel="noreferrer" className="bg-background/90 text-foreground px-4 py-2 rounded-lg font-medium text-sm hover:bg-background transition-colors flex items-center gap-2">
+                      <Eye className="w-4 h-4" />
+                      View Certificate
+                    </a>
+                  </div>
+                </div>
+                <div className="p-4">
+                  <h4 className="font-medium text-foreground text-sm line-clamp-2">IOE-Microsoft AI Fluency Training</h4>
+                </div>
+              </div>
             </div>
           </div>
 

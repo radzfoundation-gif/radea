@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Joyride, { CallBackProps, STATUS, Step } from "react-joyride";
+import { Joyride, CallBackProps, STATUS, Step } from "react-joyride";
 
 interface TourGuideProps {
   language: "id" | "en";
@@ -66,6 +66,11 @@ export function TourGuide({ language }: TourGuideProps) {
       placement: "top",
     },
     {
+      target: "#tour-certificates",
+      content: "Here are some of my certifications. Click to view them!",
+      placement: "top",
+    },
+    {
       target: "#tour-contact",
       content: "Want to get in touch? Send me a message here or connect via my social media links.",
       placement: "top",
@@ -102,6 +107,11 @@ export function TourGuide({ language }: TourGuideProps) {
     {
       target: "#tour-tech-stack",
       content: "Ini adalah daftar teknologi dan alat yang saya kuasai. Coba arahkan kursor ke logonya!",
+      placement: "top",
+    },
+    {
+      target: "#tour-certificates",
+      content: "Berikut adalah beberapa sertifikasi saya. Klik untuk melihatnya!",
       placement: "top",
     },
     {
