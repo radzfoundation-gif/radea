@@ -13,6 +13,7 @@ import { CVModal } from "@/components/CVModal";
 import PageTransition from "@/components/PageTransition";
 import { Header } from "@/components/Header";
 import { StatusModal } from "@/components/StatusModal";
+import { TourGuide } from "@/components/TourGuide";
 import {
   Dialog,
   DialogContent,
@@ -187,6 +188,8 @@ const Index = () => {
       {/* Main Container */}
       <div className="mx-auto max-w-[900px] bg-card shadow-paper relative overflow-hidden rounded-sm z-10">
         
+        <TourGuide language={language} />
+
         {/* Header */}
         <Header t={t} isDark={isDark} setIsDark={setIsDark} />
 
@@ -194,9 +197,17 @@ const Index = () => {
         <div className="h-32 dotted-pattern w-full border-b border-border"></div>
 
         {/* Profile Section */}
-        <div className="relative px-6 md:px-12 py-8 md:py-10 flex flex-col md:flex-row items-center md:items-start gap-6 text-center md:text-left">
-          <div className="absolute top-6 right-10 flex items-center gap-1.5 text-xs text-muted-foreground">
-            <Eye className="w-3.5 h-3.5" /> 244
+        <div id="tour-profile" className="relative px-6 md:px-12 py-8 md:py-10 flex flex-col md:flex-row items-center md:items-start gap-6 text-center md:text-left">
+          <div className="absolute top-6 right-8 md:right-10 flex items-center gap-3 text-xs text-muted-foreground">
+            <button 
+              onClick={() => window.dispatchEvent(new CustomEvent("start-tour"))}
+              className="flex items-center gap-1.5 hover:text-foreground transition-colors bg-secondary/50 px-2 py-1 rounded-md"
+            >
+              <Play className="w-3 h-3" /> Tour
+            </button>
+            <div className="flex items-center gap-1.5">
+              <Eye className="w-3.5 h-3.5" /> 244
+            </div>
           </div>
           
           <div className="w-24 h-24 md:w-32 md:h-32 rounded-[1.25rem] bg-secondary overflow-hidden shrink-0 border border-border shadow-sm p-1">
@@ -235,6 +246,7 @@ const Index = () => {
             </div>
             <div className="flex flex-wrap items-center gap-3">
               <a 
+                id="tour-cv"
                 href="/CV_I-Wayan-Radea.docx" 
                 download="CV_I-Wayan-Radea.docx"
                 className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-md text-sm font-medium hover:bg-primary/90 transition-colors shadow-sm"
@@ -289,7 +301,7 @@ const Index = () => {
           </ul>
 
           {/* Tech Stack Section */}
-          <div className="mt-12 pt-8 border-t border-border">
+          <div id="tour-tech-stack" className="mt-12 pt-8 border-t border-border">
             <h3 className="text-xl font-medium text-foreground mb-6 flex items-center gap-2">
               <Code2 className="w-5 h-5" />
               {t.techStack}
@@ -356,7 +368,7 @@ const Index = () => {
           </div>
 
           {/* Contact Section */}
-          <div className="mt-12 pt-8 border-t border-border">
+          <div id="tour-contact" className="mt-12 pt-8 border-t border-border">
             <h3 className="text-xl font-medium text-foreground mb-6">{t.connect}</h3>
             <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
               <form className="space-y-4 md:col-span-3">

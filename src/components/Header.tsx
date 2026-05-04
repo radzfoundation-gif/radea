@@ -37,7 +37,7 @@ export function Header({ t, isDark, setIsDark }: HeaderProps) {
         </div>
       </div>
       <div className="flex items-center gap-4 md:gap-6 text-sm text-muted-foreground w-full md:w-auto overflow-x-auto scrollbar-hide pb-1 md:pb-0">
-        <nav className="flex items-center gap-4 md:gap-5 whitespace-nowrap mx-auto md:mx-0">
+        <nav id="tour-nav" className="flex items-center gap-4 md:gap-5 whitespace-nowrap mx-auto md:mx-0">
           <Link to="/" className={getLinkClass("/")}>{t.home}</Link>
           <Link to="/education" className={getLinkClass("/education")}>{t.education}</Link>
           <Link to="/projects" className={getLinkClass("/projects")}>{t.projects}</Link>
@@ -67,6 +67,7 @@ export function Header({ t, isDark, setIsDark }: HeaderProps) {
         </nav>
         <div className="hidden md:flex items-center gap-3">
           <div 
+            id="tour-command-menu"
             onClick={() => window.dispatchEvent(new CustomEvent("open-command-menu"))}
             className="flex items-center gap-2 border border-border bg-background px-2.5 py-1 rounded-md text-xs cursor-pointer hover:bg-accent transition-colors"
           >
