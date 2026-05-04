@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { CVModal } from "@/components/CVModal";
 import PageTransition from "@/components/PageTransition";
+import { Header } from "@/components/Header";
 import { StatusModal } from "@/components/StatusModal";
 import {
   Dialog,
@@ -187,62 +188,18 @@ const Index = () => {
       <div className="mx-auto max-w-[900px] bg-card shadow-paper relative overflow-hidden rounded-sm z-10">
         
         {/* Header */}
-        <header className="flex items-center justify-between px-8 py-5 border-b border-border">
-          <div className="font-display text-xl font-bold tracking-tighter">
-            <Link to="/">RR</Link>
-          </div>
-          <div className="flex items-center gap-6 text-sm text-muted-foreground">
-            <nav className="flex items-center gap-5">
-              <Link to="/" className="text-foreground font-medium">{t.home}</Link>
-              <Link to="/education" className="hover:text-foreground transition-colors">{t.education}</Link>
-              <Link to="/projects" className="hover:text-foreground transition-colors">{t.projects}</Link>
-              <Link to="/gallery" className="hover:text-foreground transition-colors">{t.gallery}</Link>
-              <button 
-                onClick={() => window.dispatchEvent(new CustomEvent("open-note-modal"))}
-                className="hover:text-foreground transition-colors"
-              >
-                {t.notes}
-              </button>
-              <DropdownMenu>
-                <DropdownMenuTrigger className="hover:text-foreground transition-colors flex items-center gap-1 outline-none">
-                  {t.more} <span className="text-[10px]">▼</span>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="w-40">
-                  <DropdownMenuItem asChild>
-                    <a href="https://github.com" target="_blank" rel="noreferrer">GitHub</a>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <a href="/CV_I-Wayan-Radea.docx" download="CV_I-Wayan-Radea.docx">{t.downloadCV}</a>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-            </nav>
-            <div 
-              onClick={() => window.dispatchEvent(new CustomEvent("open-command-menu"))}
-              className="flex items-center gap-2 border border-border bg-background px-2.5 py-1 rounded-md text-xs cursor-pointer hover:bg-accent transition-colors"
-            >
-              <Search className="w-3.5 h-3.5" />
-              <span>Ctrl K</span>
-            </div>
-            <button onClick={() => setIsDark(!isDark)} className="hover:text-foreground transition-colors">
-              {isDark ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
-            </button>
-          </div>
-        </header>
+        <Header t={t} isDark={isDark} setIsDark={setIsDark} />
 
         {/* Dotted Grid Area */}
         <div className="h-32 dotted-pattern w-full border-b border-border"></div>
 
         {/* Profile Section */}
-        <div className="relative px-12 py-10 flex items-start gap-6">
+        <div className="relative px-6 md:px-12 py-8 md:py-10 flex flex-col md:flex-row items-center md:items-start gap-6 text-center md:text-left">
           <div className="absolute top-6 right-10 flex items-center gap-1.5 text-xs text-muted-foreground">
             <Eye className="w-3.5 h-3.5" /> 244
           </div>
           
-          <div className="w-32 h-32 rounded-[1.25rem] bg-secondary overflow-hidden shrink-0 border border-border shadow-sm p-1">
+          <div className="w-24 h-24 md:w-32 md:h-32 rounded-[1.25rem] bg-secondary overflow-hidden shrink-0 border border-border shadow-sm p-1">
             <div className="w-full h-full rounded-[1rem] overflow-hidden">
               <video 
                 src="/avatar.mp4" 
@@ -261,7 +218,7 @@ const Index = () => {
                 <span className="w-1.5 h-1.5 rounded-full bg-current block opacity-50"></span>
               </span>
             </div>
-            <h1 className="text-3xl font-display font-medium flex items-center gap-2 mb-2 text-foreground">
+            <h1 className="text-2xl md:text-3xl font-display font-medium flex items-center gap-2 mb-2 text-foreground">
               I Wayan Radea
               <BadgeCheck className="w-5 h-5 text-verified fill-verified text-verified-foreground" />
             </h1>
@@ -323,7 +280,7 @@ const Index = () => {
         <div className="h-8 diagonal-pattern border-y border-border"></div>
 
         {/* About Section */}
-        <div className="px-12 py-10">
+        <div className="px-6 md:px-12 py-8 md:py-10">
           <h2 className="text-2xl font-light text-muted-foreground mb-8">{t.about}</h2>
           <ul className="space-y-4 text-[15px] leading-relaxed text-foreground/80 list-disc pl-5 marker:text-muted-foreground/50">
             {t.aboutList.map((item, index) => (

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Search, Sun, Moon, GraduationCap, School, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
 import PageTransition from "@/components/PageTransition";
+import { Header } from "@/components/Header";
 
 const translations = {
   id: {
@@ -100,42 +101,13 @@ const Education = () => {
       <div className="mx-auto max-w-[900px] bg-card shadow-paper relative overflow-hidden rounded-sm z-10">
         
         {/* Header */}
-        <header className="flex items-center justify-between px-8 py-5 border-b border-border">
-          <div className="font-display text-xl font-bold tracking-tighter">
-            <Link to="/">RR</Link>
-          </div>
-          <div className="flex items-center gap-6 text-sm text-muted-foreground">
-            <nav className="flex items-center gap-5">
-              <Link to="/" className="hover:text-foreground transition-colors">{t.home}</Link>
-              <Link to="/education" className="text-foreground font-medium">{t.education}</Link>
-              <Link to="/projects" className="hover:text-foreground transition-colors">{t.projects}</Link>
-              <Link to="/gallery" className="hover:text-foreground transition-colors">{t.gallery}</Link>
-              <button 
-                onClick={() => window.dispatchEvent(new CustomEvent("open-note-modal"))}
-                className="hover:text-foreground transition-colors"
-              >
-                {t.notes}
-              </button>
-              <a href="#" className="hover:text-foreground transition-colors flex items-center gap-1">{t.more} <span className="text-[10px]">▼</span></a>
-            </nav>
-            <div 
-              onClick={() => window.dispatchEvent(new CustomEvent("open-command-menu"))}
-              className="flex items-center gap-2 border border-border bg-background px-2.5 py-1 rounded-md text-xs cursor-pointer hover:bg-accent transition-colors"
-            >
-              <Search className="w-3.5 h-3.5" />
-              <span>Ctrl K</span>
-            </div>
-            <button onClick={() => setIsDark(!isDark)} className="hover:text-foreground transition-colors">
-              {isDark ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
-            </button>
-          </div>
-        </header>
+        <Header t={t} isDark={isDark} setIsDark={setIsDark} />
 
         {/* Diagonal Separator */}
         <div className="h-8 diagonal-pattern border-b border-border"></div>
 
         {/* Education Content */}
-        <div className="px-8 md:px-12 py-10 pb-20">
+        <div className="px-8 md:px-6 md:px-12 py-8 md:py-10 pb-20">
           <h2 className="text-2xl font-light text-muted-foreground mb-10 flex items-center gap-3">
             <GraduationCap className="w-7 h-7" />
             {t.educationTitle}

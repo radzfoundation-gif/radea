@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Search, Sun, Moon, MessageSquare, Send, User } from "lucide-react";
 import { Link } from "react-router-dom";
 import PageTransition from "@/components/PageTransition";
+import { Header } from "@/components/Header";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { format } from "date-fns";
@@ -121,30 +122,11 @@ const Guestbook = () => {
       <div className="min-h-screen w-full relative py-12 px-4 md:px-8 bg-[#F5F5DC] dark:bg-background transition-colors duration-300">
         <div className="mx-auto max-w-[900px] bg-card shadow-paper relative overflow-hidden rounded-sm z-10">
           
-          <header className="flex items-center justify-between px-8 py-5 border-b border-border">
-            <div className="font-display text-xl font-bold tracking-tighter">
-              <Link to="/">RR</Link>
-            </div>
-            <div className="flex items-center gap-6 text-sm text-muted-foreground">
-              <nav className="flex items-center gap-5">
-                <Link to="/" className="hover:text-foreground transition-colors">{t.home}</Link>
-                <Link to="/education" className="hover:text-foreground transition-colors">{t.education}</Link>
-                <Link to="/projects" className="hover:text-foreground transition-colors">{t.projects}</Link>
-                <Link to="/gallery" className="hover:text-foreground transition-colors">{t.gallery}</Link>
-                <Link to="/notes" className="text-foreground font-medium">{t.notes}</Link>
-              </nav>
-              <button onClick={() => window.dispatchEvent(new CustomEvent("open-command-menu"))}>
-                <Search className="w-4 h-4" />
-              </button>
-              <button onClick={() => setIsDark(!isDark)}>
-                {isDark ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
-              </button>
-            </div>
-          </header>
+          <Header t={t} isDark={isDark} setIsDark={setIsDark} />
 
           <div className="h-8 diagonal-pattern border-b border-border"></div>
 
-          <div className="px-8 md:px-12 py-10">
+          <div className="px-8 md:px-6 md:px-12 py-8 md:py-10">
             <div className="flex items-center gap-3 mb-2">
               <MessageSquare className="w-6 h-6 text-primary" />
               <h2 className="text-2xl font-display font-medium text-foreground">{t.guestbookTitle}</h2>
