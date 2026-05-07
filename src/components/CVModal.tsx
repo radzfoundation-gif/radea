@@ -21,19 +21,92 @@ const cvData = {
         <div className="text-center space-y-1">
           <h2 className="text-2xl font-bold font-display text-foreground">I WAYAN RADEA</h2>
           <p className="text-primary font-medium">Junior Full-Stack Developer</p>
-          <p className="text-xs text-muted-foreground">Pujungan, Tabanan, Bali | +62 851-5503-1983 | radzfoundation@gmail.com</p>
+          <p className="text-xs text-muted-foreground">Bali, Indonesia | +62 851-5503-1983 | radzfoundation@gmail.com</p>
           <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground pt-1">
-            <a href="https://rlabs-studio.cloud" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">rlabs-studio.cloud</a>
+            <a href="https://linkedin.com/in/wayan-radea-82ab63386" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">LinkedIn</a>
             <span>|</span>
-            <a href="https://radz-foundation-showcase.vercel.app" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">Portfolio</a>
+            <a href="https://noir-studio.my.id" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">noir-studio.my.id</a>
           </div>
         </div>
 
         <section>
           <h3 className="font-bold text-foreground border-b border-border pb-1 mb-2 uppercase text-xs tracking-wider">Ringkasan Profil</h3>
           <p className="leading-relaxed">
-            Junior Full-Stack Developer dengan pengalaman langsung dalam membangun aplikasi web responsif menggunakan framework JavaScript modern. Memiliki fondasi kuat dalam pengembangan frontend dengan React serta pengalaman mengintegrasikan REST API dan layanan backend dasar. Terbiasa bekerja dengan Git, lingkungan Linux, dan alur kerja tim secara kolaboratif. Sangat termotivasi, cepat belajar, dan antusias untuk berkembang sambil berkontribusi pada aplikasi yang bersih, mudah dipelihara, dan berfokus pada pengguna.
+            Junior Full-Stack Developer dengan pengalaman lebih dari 2 tahun dalam merancang dan mengembangkan aplikasi web responsif menggunakan framework JavaScript modern seperti React dan Next.js. Pengembang yang mandiri dengan kemampuan membangun dan meluncurkan dua produk SaaS berbasis AI. Berpengalaman dalam integrasi RESTful API, layanan backend Firebase, dan pengembangan UI yang mobile-first serta kompatibel lintas browser. Memembangun solusi dunia nyata di persimpangan desain dan teknologi.
           </p>
+        </section>
+
+        <section>
+          <h3 className="font-bold text-foreground border-b border-border pb-1 mb-3 uppercase text-xs tracking-wider">Keahlian Teknis</h3>
+          <ul className="space-y-2">
+            <li><span className="font-medium">Frontend:</span> HTML5, CSS3, JavaScript (ES6+), TypeScript, React.js, Next.js, Astro.js, Tailwind CSS, Responsive Web Design, Mobile-First Development, Cross-Browser Compatibility</li>
+            <li><span className="font-medium">Backend & API:</span> Node.js, RESTful API Integration, Firebase (Authentication, Firestore, Realtime Database), Basic Data Management</li>
+            <li><span className="font-medium">DevOps & Tools:</span> Git, GitHub, Linux (Arch Linux), CLI, Version Control, Web Performance Optimization</li>
+            <li><span className="font-medium">AI & Otomasi:</span> LLM API Integration (OpenAI, Anthropic), Local LLM (Ollama), Prompt Engineering, AI-Assisted Development</li>
+            <li><span className="font-medium">Soft Skills:</span> Self-directed Learning, Problem Solving, Agile Mindset, End-to-End Project Ownership</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3 className="font-bold text-foreground border-b border-border pb-1 mb-3 uppercase text-xs tracking-wider">Pengalaman Kerja</h3>
+          <div className="space-y-4">
+            <div>
+              <div className="flex justify-between font-medium">
+                <span>Freelance Full-Stack Web Developer</span>
+                <span className="text-xs text-muted-foreground whitespace-nowrap ml-2">Jan 2023 – Sekarang</span>
+              </div>
+              <p className="text-muted-foreground mb-1">Self-Employed – Remote, Indonesia</p>
+              <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
+                <li>Merancang dan mengembangkan 5+ aplikasi web responsif dan landing page menggunakan HTML5, CSS3, JavaScript, React.js, dan Next.js</li>
+                <li>Membangun komponen UI yang dapat digunakan ulang dan modular dengan menerapkan prinsip desain mobile-first dan praktik terbaik kompatibilitas lintas browser</li>
+                <li>Mengintegrasikan RESTful API dan layanan backend Firebase termasuk autentikasi pengguna, database Firestore, dan manajemen data real-time</li>
+                <li>Secara mandiri mengkONSEp, mengarsiteki, dan meluncurkan dua aplikasi web SaaS berbasis AI dari nol hingga production</li>
+                <li>Menerapkan teknik optimasi performa web untuk meningkatkan waktu muat aplikasi dan pengalaman pengguna</li>
+              </ul>
+            </div>
+            <div>
+              <div className="flex justify-between font-medium">
+                <span>IoT Developer (Proyek Solo)</span>
+                <span className="text-xs text-muted-foreground whitespace-nowrap ml-2">Nov 2024</span>
+              </div>
+              <p className="text-muted-foreground mb-1">Kompetisi Akademik Tingkat Kabupaten – Bali, Indonesia</p>
+              <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
+                <li>Merancang dan membangun sistem monitoring kelembaban tanah otomatis menggunakan sensor embedded untuk tracking pertanian yang efisien</li>
+                <li>Menangani pengembangan end-to-end penuh: desain sistem, integrasi hardware, logika pemrograman, kalibrasi sensor, dan pengujian QA</li>
+                <li>Mendapatkan Juara 2 Tingkat Kabupaten pada Kompetisi Akademik Tingkat Kabupaten</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3 className="font-bold text-foreground border-b border-border pb-1 mb-3 uppercase text-xs tracking-wider">Proyek</h3>
+          <div className="space-y-4">
+            <div>
+              <div className="flex justify-between font-medium">
+                <span>Noir AI — Platform SaaS AI Chat</span>
+                <span className="text-xs text-muted-foreground whitespace-nowrap ml-2">2024 – Sekarang</span>
+              </div>
+              <p className="text-muted-foreground mb-1">Platform chat AI yang diinisiasi sendiri, terinspirasi dari Claude dan ChatGPT</p>
+              <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
+                <li>Tech Stack: Next.js, React.js, Tailwind CSS, Node.js, LLM API Integration (OpenAI/Anthropic), Firebase Authentication</li>
+                <li>Mengimplementasikan multi-turn conversation management, autentikasi pengguna, dan real-time streaming responses</li>
+                <li>Saat ini dalam pengembangan aktif dengan iterasi fitur dan peningkatan UI/UX yang berkelanjutan</li>
+              </ul>
+            </div>
+            <div>
+              <div className="flex justify-between font-medium">
+                <span>Noir Code — SaaS Web Generator Fullstack</span>
+                <span className="text-xs text-muted-foreground whitespace-nowrap ml-2">2024 – Sekarang</span>
+              </div>
+              <p className="text-muted-foreground mb-1">Platform generator aplikasi web yang diinisiasi sendiri, serupa dengan Lovable dan Replit Agent</p>
+              <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
+                <li>Tech Stack: Next.js, React.js, TypeScript, Tailwind CSS, LLM API Integration, Firebase</li>
+                <li>Memungkinkan pengguna menghasilkan aplikasi web lengkap dan fungsional dari prompt bahasa alami menggunakan AI code generation</li>
+                <li>Saat ini dalam pengembangan aktif; mengelola product roadmap, pengembangan fitur, dan deployment secara mandiri</li>
+              </ul>
+            </div>
+          </div>
         </section>
 
         <section>
@@ -41,79 +114,19 @@ const cvData = {
           <div className="space-y-3">
             <div>
               <div className="flex justify-between font-medium">
-                <span>Mahasiswa Aktif – Sistem Informasi</span>
+                <span>Sarjana Sistem Informasi</span>
                 <span className="text-xs text-muted-foreground whitespace-nowrap ml-2">2025 – Sekarang</span>
               </div>
               <p className="text-muted-foreground">Universitas Terbuka – Indonesia</p>
             </div>
             <div>
               <div className="flex justify-between font-medium">
-                <span>SMA Negeri 1 Pupuan – Program IPA</span>
+                <span>Diploma SMA — Program IPA (Ilmu Pengetahuan Alam)</span>
                 <span className="text-xs text-muted-foreground whitespace-nowrap ml-2">Jul 2022 – Apr 2025</span>
               </div>
               <p className="text-muted-foreground">SMA Negeri 1 Pupuan, Bali</p>
             </div>
-            <div>
-              <div className="flex justify-between font-medium">
-                <span>SMP Negeri 6 Pupuan Satu Atap</span>
-                <span className="text-xs text-muted-foreground whitespace-nowrap ml-2">Jul 2019 – Apr 2022</span>
-              </div>
-              <p className="text-muted-foreground">Pupuan, Tabanan, Bali</p>
-            </div>
-            <div>
-              <div className="flex justify-between font-medium">
-                <span>SD Negeri 6 Pujungan</span>
-                <span className="text-xs text-muted-foreground whitespace-nowrap ml-2">Jul 2013 – Apr 2019</span>
-              </div>
-              <p className="text-muted-foreground">Pujungan, Tabanan, Bali</p>
-            </div>
           </div>
-        </section>
-
-        <section>
-          <h3 className="font-bold text-foreground border-b border-border pb-1 mb-3 uppercase text-xs tracking-wider">Pengalaman Kerja</h3>
-          <div>
-            <div className="flex justify-between font-medium">
-              <span>Freelance / Independent Web Developer</span>
-              <span className="text-xs text-muted-foreground whitespace-nowrap ml-2">Jan 2023 – Sekarang</span>
-            </div>
-            <p className="text-muted-foreground mb-2">Bekerja Mandiri – Indonesia</p>
-            <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
-              <li>Merancang dan mengembangkan aplikasi web responsif dan landing page menggunakan HTML, CSS, JavaScript, serta framework modern seperti React dan Next.js.</li>
-              <li>Membangun komponen UI yang dapat digunakan ulang dan menerapkan desain mobile-first.</li>
-              <li>Mengintegrasikan REST API dan layanan backend untuk konten dinamis dan interaksi pengguna.</li>
-              <li>Mengembangkan fungsionalitas backend dasar menggunakan Firebase dan Node.js.</li>
-            </ul>
-          </div>
-        </section>
-
-        <section>
-          <h3 className="font-bold text-foreground border-b border-border pb-1 mb-3 uppercase text-xs tracking-wider">Proyek</h3>
-          <div>
-            <div className="flex justify-between font-medium">
-              <span>Sistem Monitoring Kelembaban Tanah Otomatis</span>
-              <span className="text-xs text-muted-foreground whitespace-nowrap ml-2">November 2025</span>
-            </div>
-            <p className="text-muted-foreground mb-2">Proyek Mandiri – Indonesia</p>
-            <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
-              <li>Mengembangkan perangkat monitoring kelembaban tanah otomatis untuk mendukung proyek sekolah.</li>
-              <li>Bertanggung jawab penuh atas desain sistem, integrasi sensor, logika pemrograman dasar, kalibrasi, dan pengujian.</li>
-              <li>Meraih Juara 2 Tingkat Kabupaten dalam kompetisi akademik tingkat daerah.</li>
-            </ul>
-          </div>
-        </section>
-
-        <section>
-          <h3 className="font-bold text-foreground border-b border-border pb-1 mb-3 uppercase text-xs tracking-wider">Keahlian Teknis</h3>
-          <ul className="space-y-1">
-            <li><span className="font-medium">Frontend Development:</span> HTML5, CSS3, JavaScript, TypeScript (dasar), React, Next.js, Astro JS, Tailwind CSS</li>
-            <li><span className="font-medium">Backend & API:</span> Node.js (dasar), Firebase, REST API, Autentikasi, Pengelolaan Data Dasar</li>
-            <li><span className="font-medium">Database:</span> Pemahaman dasar SQL & NoSQL</li>
-            <li><span className="font-medium">Tools & Version Control:</span> Git, GitHub, Linux (Arch Linux), CLI</li>
-            <li><span className="font-medium">UI/UX & Web Performance:</span> Responsive Design, Mobile-First Approach, Optimasi Performa</li>
-            <li><span className="font-medium">AI & Otomasi (Dasar):</span> Local LLM (Ollama), Integrasi API / LLM Dasar</li>
-            <li><span className="font-medium">Soft Skills:</span> Problem Solving, Cepat Belajar, Kerja Tim, Komunikasi yang Baik, Perhatian terhadap Detail</li>
-          </ul>
         </section>
       </div>
     )
@@ -126,19 +139,92 @@ const cvData = {
         <div className="text-center space-y-1">
           <h2 className="text-2xl font-bold font-display text-foreground">I WAYAN RADEA</h2>
           <p className="text-primary font-medium">Junior Full-Stack Developer</p>
-          <p className="text-xs text-muted-foreground">Pujungan, Tabanan, Bali | +62 851-5503-1983 | radzfoundation@gmail.com</p>
+          <p className="text-xs text-muted-foreground">Bali, Indonesia | +62 851-5503-1983 | radzfoundation@gmail.com</p>
           <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground pt-1">
-            <a href="https://rlabs-studio.cloud" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">rlabs-studio.cloud</a>
+            <a href="https://linkedin.com/in/wayan-radea-82ab63386" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">LinkedIn</a>
             <span>|</span>
-            <a href="https://radz-foundation-showcase.vercel.app" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">Portfolio</a>
+            <a href="https://noir-studio.my.id" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">noir-studio.my.id</a>
           </div>
         </div>
 
         <section>
-          <h3 className="font-bold text-foreground border-b border-border pb-1 mb-2 uppercase text-xs tracking-wider">Profile Summary</h3>
+          <h3 className="font-bold text-foreground border-b border-border pb-1 mb-2 uppercase text-xs tracking-wider">Professional Summary</h3>
           <p className="leading-relaxed">
-            Junior Full-Stack Developer with hands-on experience building responsive web applications using modern JavaScript frameworks. Strong foundation in frontend development with React and experience integrating REST APIs and basic backend services. Comfortable working with Git, Linux environments, and collaborative team workflows. Highly motivated, fast learner, and eager to grow while contributing to clean, maintainable, and user-focused applications.
+            Junior Full-Stack Developer with 2+ years of hands-on experience designing and developing responsive web applications using modern JavaScript frameworks including React and Next.js. Self-driven developer who independently built and launched two AI-powered SaaS products. Experienced in RESTful API integration, Firebase backend services, and cross-browser compatible, mobile-first UI development. Passionate about building real-world solutions at the intersection of design and technology.
           </p>
+        </section>
+
+        <section>
+          <h3 className="font-bold text-foreground border-b border-border pb-1 mb-3 uppercase text-xs tracking-wider">Technical Skills</h3>
+          <ul className="space-y-2">
+            <li><span className="font-medium">Frontend:</span> HTML5, CSS3, JavaScript (ES6+), TypeScript, React.js, Next.js, Astro.js, Tailwind CSS, Responsive Web Design, Mobile-First Development, Cross-Browser Compatibility</li>
+            <li><span className="font-medium">Backend & API:</span> Node.js, RESTful API Integration, Firebase (Authentication, Firestore, Realtime Database), Basic Data Management</li>
+            <li><span className="font-medium">DevOps & Tools:</span> Git, GitHub, Linux (Arch Linux), CLI, Version Control, Web Performance Optimization</li>
+            <li><span className="font-medium">AI & Automation:</span> LLM API Integration (OpenAI, Anthropic), Local LLM (Ollama), Prompt Engineering, AI-Assisted Development</li>
+            <li><span className="font-medium">Soft Skills:</span> Self-directed Learning, Problem Solving, Agile Mindset, End-to-End Project Ownership</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3 className="font-bold text-foreground border-b border-border pb-1 mb-3 uppercase text-xs tracking-wider">Work Experience</h3>
+          <div className="space-y-4">
+            <div>
+              <div className="flex justify-between font-medium">
+                <span>Freelance Full-Stack Web Developer</span>
+                <span className="text-xs text-muted-foreground whitespace-nowrap ml-2">Jan 2023 – Present</span>
+              </div>
+              <p className="text-muted-foreground mb-1">Self-Employed – Remote, Indonesia</p>
+              <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
+                <li>Designed and developed 5+ responsive web applications and landing pages using HTML5, CSS3, JavaScript, React.js, and Next.js</li>
+                <li>Built reusable, modular UI components following mobile-first design principles and cross-browser compatibility best practices</li>
+                <li>Integrated RESTful APIs and Firebase backend services including user authentication, Firestore database, and real-time data management</li>
+                <li>Independently conceptualized, architected, and launched two AI-powered SaaS web applications from zero to production</li>
+                <li>Applied web performance optimization techniques to improve application load time and user experience</li>
+              </ul>
+            </div>
+            <div>
+              <div className="flex justify-between font-medium">
+                <span>IoT Developer (Solo Project)</span>
+                <span className="text-xs text-muted-foreground whitespace-nowrap ml-2">Nov 2024</span>
+              </div>
+              <p className="text-muted-foreground mb-1">Regency-Level Academic Competition – Bali, Indonesia</p>
+              <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
+                <li>Designed and built an automated soil moisture monitoring system using embedded sensors for efficient agricultural tracking</li>
+                <li>Handled full end-to-end development: system design, hardware integration, programming logic, sensor calibration, and QA testing</li>
+                <li>Awarded 2nd Place (Juara 2 Tingkat Kabupaten) at Regency-Level Academic Competition</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3 className="font-bold text-foreground border-b border-border pb-1 mb-3 uppercase text-xs tracking-wider">Projects</h3>
+          <div className="space-y-4">
+            <div>
+              <div className="flex justify-between font-medium">
+                <span>Noir AI — AI Chat SaaS Platform</span>
+                <span className="text-xs text-muted-foreground whitespace-nowrap ml-2">2024 – Present</span>
+              </div>
+              <p className="text-muted-foreground mb-1">Self-initiated AI chat platform inspired by Claude and ChatGPT</p>
+              <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
+                <li>Tech Stack: Next.js, React.js, Tailwind CSS, Node.js, LLM API Integration (OpenAI/Anthropic), Firebase Authentication</li>
+                <li>Implemented multi-turn conversation management, user authentication, and real-time streaming responses</li>
+                <li>Currently in active development with continuous feature iteration and UI/UX improvements</li>
+              </ul>
+            </div>
+            <div>
+              <div className="flex justify-between font-medium">
+                <span>Noir Code — Fullstack Web Generator SaaS</span>
+                <span className="text-xs text-muted-foreground whitespace-nowrap ml-2">2024 – Present</span>
+              </div>
+              <p className="text-muted-foreground mb-1">Self-initiated web application generator platform similar to Lovable and Replit Agent</p>
+              <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
+                <li>Tech Stack: Next.js, React.js, TypeScript, Tailwind CSS, LLM API Integration, Firebase</li>
+                <li>Enables users to generate complete, functional web applications from natural language prompts using AI code generation</li>
+                <li>Currently in active development; managing product roadmap, feature development, and deployment independently</li>
+              </ul>
+            </div>
+          </div>
         </section>
 
         <section>
@@ -146,79 +232,19 @@ const cvData = {
           <div className="space-y-3">
             <div>
               <div className="flex justify-between font-medium">
-                <span>Active Student – Information Systems</span>
+                <span>Bachelor of Information Systems</span>
                 <span className="text-xs text-muted-foreground whitespace-nowrap ml-2">2025 – Present</span>
               </div>
               <p className="text-muted-foreground">Universitas Terbuka (Open University) – Indonesia</p>
             </div>
             <div>
               <div className="flex justify-between font-medium">
-                <span>Senior High School – Science Program</span>
+                <span>Senior High School Diploma — Science Program (IPA)</span>
                 <span className="text-xs text-muted-foreground whitespace-nowrap ml-2">Jul 2022 – Apr 2025</span>
               </div>
               <p className="text-muted-foreground">SMA Negeri 1 Pupuan, Bali</p>
             </div>
-            <div>
-              <div className="flex justify-between font-medium">
-                <span>Junior High School</span>
-                <span className="text-xs text-muted-foreground whitespace-nowrap ml-2">Jul 2019 – Apr 2022</span>
-              </div>
-              <p className="text-muted-foreground">SMP Negeri 6 Pupuan Satu Atap, Bali</p>
-            </div>
-            <div>
-              <div className="flex justify-between font-medium">
-                <span>Elementary School</span>
-                <span className="text-xs text-muted-foreground whitespace-nowrap ml-2">Jul 2013 – Apr 2019</span>
-              </div>
-              <p className="text-muted-foreground">SD Negeri 6 Pujungan, Bali</p>
-            </div>
           </div>
-        </section>
-
-        <section>
-          <h3 className="font-bold text-foreground border-b border-border pb-1 mb-3 uppercase text-xs tracking-wider">Work Experience</h3>
-          <div>
-            <div className="flex justify-between font-medium">
-              <span>Freelance / Independent Web Developer</span>
-              <span className="text-xs text-muted-foreground whitespace-nowrap ml-2">Jan 2023 – Present</span>
-            </div>
-            <p className="text-muted-foreground mb-2">Self-employed – Indonesia</p>
-            <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
-              <li>Designed and developed responsive web applications and landing pages using HTML, CSS, JavaScript, and modern frameworks such as React and Next.js.</li>
-              <li>Built reusable UI components and implemented mobile-first designs to ensure compatibility across devices and browsers.</li>
-              <li>Integrated REST APIs and backend services for dynamic content and user interactions.</li>
-              <li>Developed basic backend functionality using Firebase and Node.js-based services, including authentication and data handling.</li>
-            </ul>
-          </div>
-        </section>
-
-        <section>
-          <h3 className="font-bold text-foreground border-b border-border pb-1 mb-3 uppercase text-xs tracking-wider">Projects</h3>
-          <div>
-            <div className="flex justify-between font-medium">
-              <span>Automatic Soil Moisture Monitoring System</span>
-              <span className="text-xs text-muted-foreground whitespace-nowrap ml-2">November 2025</span>
-            </div>
-            <p className="text-muted-foreground mb-2">Independent Project – Indonesia</p>
-            <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
-              <li>Developed an automatic soil moisture monitoring device to support a school project focused on efficient soil condition monitoring.</li>
-              <li>Fully responsible for the end-to-end development process: system design, sensor integration, basic programming logic, calibration, and testing.</li>
-              <li>Submitted to a regional academic competition and achieved 2nd Place at the Regency Level.</li>
-            </ul>
-          </div>
-        </section>
-
-        <section>
-          <h3 className="font-bold text-foreground border-b border-border pb-1 mb-3 uppercase text-xs tracking-wider">Technical Skills</h3>
-          <ul className="space-y-1">
-            <li><span className="font-medium">Frontend Development:</span> HTML5, CSS3, JavaScript, TypeScript (basic), React, Next.js, Astro JS, Tailwind CSS</li>
-            <li><span className="font-medium">Backend & API:</span> Node.js (basic), Firebase, REST API, Authentication, Basic Data Handling</li>
-            <li><span className="font-medium">Database:</span> Basic understanding of SQL & NoSQL databases</li>
-            <li><span className="font-medium">Tools & Version Control:</span> Git, GitHub, Linux (Arch Linux), CLI</li>
-            <li><span className="font-medium">UI/UX & Web Performance:</span> Responsive Design, Mobile-First Approach, Performance Optimization</li>
-            <li><span className="font-medium">AI & Automation (Basic):</span> Local LLM (Ollama), Basic LLM / API Integration</li>
-            <li><span className="font-medium">Soft Skills:</span> Problem Solving, Fast Learner, Team Collaboration, Good Communication, Attention to Detail</li>
-          </ul>
         </section>
       </div>
     )

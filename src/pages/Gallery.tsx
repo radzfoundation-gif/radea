@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Search, Sun, Moon, Image as ImageIcon } from "lucide-react";
+import { Search, Sun, Moon, Image as ImageIcon, Play, Video } from "lucide-react";
 import { Link } from "react-router-dom";
 import PageTransition from "@/components/PageTransition";
 import { Header } from "@/components/Header";
@@ -12,9 +12,11 @@ const translations = {
     gallery: "Galeri",
     notes: "Catatan",
     more: "Lainnya",
-    galleryTitle: "Galeri Foto",
-    comingSoon: "Segera Hadir",
-    comingSoonDesc: "Saya sedang mengumpulkan momen-momen terbaik untuk ditampilkan di sini. Tetap pantau!",
+    galleryTitle: "Galeri Video",
+    videoGallery: "Galeri Video",
+    introducing: "Video Perkenalan",
+    noirAiDemo: "Demo Noir AI",
+    noirCodeDemo: "Demo Noir Code",
   },
   en: {
     home: "Home",
@@ -23,11 +25,28 @@ const translations = {
     gallery: "Gallery",
     notes: "Notes",
     more: "More",
-    galleryTitle: "Photo Gallery",
-    comingSoon: "Coming Soon",
-    comingSoonDesc: "I'm currently gathering the best moments to display here. Stay tuned!",
+    galleryTitle: "Video Gallery",
+    videoGallery: "Video Gallery",
+    introducing: "Introducing Video",
+    noirAiDemo: "Noir AI Demo",
+    noirCodeDemo: "Noir Code Demo",
   }
 };
+
+const videos = [
+  {
+    id: "introducing",
+    src: "/0330.mp4",
+    titleKey: "introducing" as const,
+    aspect: "aspect-video",
+  },
+  {
+    id: "noir-ai",
+    src: "/NOIR AI - Google Chrome 2026-02-01 14-14-01.mp4",
+    titleKey: "noirAiDemo" as const,
+    aspect: "aspect-video",
+  },
+];
 
 const Gallery = () => {
   const [isDark, setIsDark] = useState(false);
@@ -105,35 +124,27 @@ const Gallery = () => {
         <div className="h-8 diagonal-pattern border-b border-border"></div>
 
         {/* Gallery Content */}
-        <div className="px-8 md:px-12 py-20 flex flex-col items-center justify-center text-center min-h-[400px]">
-          <div className="w-20 h-20 rounded-2xl bg-secondary/30 flex items-center justify-center mb-6 animate-bounce">
-            <ImageIcon className="w-10 h-10 text-muted-foreground" />
-          </div>
-          <h2 className="text-2xl md:text-3xl font-display font-medium text-foreground mb-4">
-            {t.galleryTitle} — <span className="text-primary">{t.comingSoon}</span>
+        <div className="px-8 md:px-12 py-12">
+          <h2 className="text-2xl md:text-3xl font-display font-medium text-foreground mb-8 text-center">
+            {t.videoGallery}
           </h2>
-          <p className="text-muted-foreground max-w-md">
-            {t.comingSoonDesc}
-          </p>
           
-          <div className="mt-12 grid grid-cols-5 gap-2 w-max mx-auto">
-            {Array.from({ length: 30 }).map((_, i) => {
-              const rPattern = [0, 1, 2, 3, 5, 9, 10, 11, 12, 13, 15, 17, 20, 23, 25, 29];
-              const isR = rPattern.includes(i);
-              return (
-                <div 
-                  key={i} 
-                  className={`w-3 h-3 md:w-4 md:h-4 rounded-sm transition-all duration-700 ${
-                    isR 
-                      ? "bg-primary animate-smooth-pulse shadow-[0_0_8px_rgba(var(--primary),0.2)]" 
-                      : "bg-muted/10"
-                  }`}
-                  style={{
-                    animationDelay: isR ? `${rPattern.indexOf(i) * 100}ms` : "0ms"
-                  }}
-                />
-              );
-            })}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {videos.map((video) => (
+              <div key={video.id} className="space-y-3">
+                <div className="relative bg-black rounded-lg overflow-hidden">
+                  <video
+                    src={video.src}
+                    controls
+                    className={`w-full ${video.aspect} rounded-lg`}
+                    preload="metadata"
+                  />
+                </div>
+                <p className="text-center text-sm font-medium text-foreground">
+                  {t[video.titleKey]}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
 
