@@ -436,6 +436,7 @@ const Index = () => {
                       onClick={() => { setSelectedVideo("introducing"); setVideoModalOpen(true); }}
                       className="relative group rounded-lg overflow-hidden bg-black aspect-video hover:ring-2 hover:ring-primary transition-all"
                     >
+                      <img src="/thum.png" alt="Thumbnail" className="w-full h-full object-cover" />
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform">
                           <Play className="w-6 h-6 text-white ml-1" fill="white" />
