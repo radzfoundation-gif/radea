@@ -558,11 +558,19 @@ const Index = () => {
             </DialogTitle>
           </DialogHeader>
           <div className="space-y-4">
-            <video
-              src={selectedVideo === "introducing" ? "/0330.mp4" : "/NOIR AI - Google Chrome 2026-02-01 14-14-01.mp4"}
-              controls
-              className="w-full aspect-video rounded-lg bg-black"
-            />
+            {selectedVideo === "introducing" ? (
+              <iframe 
+                src="https://drive.google.com/file/d/1LlJhMcahAol4KfS8xvIRVdW-G2tPxH8a/preview" 
+                className="w-full aspect-video rounded-lg bg-black"
+                allow="autoplay"
+              />
+            ) : (
+              <video
+                src="/NOIR AI - Google Chrome 2026-02-01 14-14-01.mp4"
+                controls
+                className="w-full aspect-video rounded-lg bg-black"
+              />
+            )}
             <div className="bg-secondary/30 rounded-lg p-4 border border-border">
               <h4 className="font-medium text-foreground mb-2 flex items-center gap-2">
                 <Code2 className="w-4 h-4" />
