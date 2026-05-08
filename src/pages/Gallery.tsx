@@ -14,9 +14,7 @@ const translations = {
     more: "Lainnya",
     galleryTitle: "Galeri Video",
     videoGallery: "Galeri Video",
-    introducing: "Video Perkenalan",
-    noirAiDemo: "Demo Noir AI",
-    noirCodeDemo: "Demo Noir Code",
+    introducing: "Introducing NOIR AI",
   },
   en: {
     home: "Home",
@@ -27,24 +25,17 @@ const translations = {
     more: "More",
     galleryTitle: "Video Gallery",
     videoGallery: "Video Gallery",
-    introducing: "Introducing Video",
-    noirAiDemo: "Noir AI Demo",
-    noirCodeDemo: "Noir Code Demo",
+    introducing: "Introducing NOIR AI",
   }
 };
 
 const videos = [
   {
     id: "introducing",
-    src: "/0330.mp4",
+    src: "https://drive.google.com/file/d/1LlJhMcahAol4KfS8xvIRVdW-G2tPxH8a/preview",
     titleKey: "introducing" as const,
     aspect: "aspect-video",
-  },
-  {
-    id: "noir-ai",
-    src: "/NOIR AI - Google Chrome 2026-02-01 14-14-01.mp4",
-    titleKey: "noirAiDemo" as const,
-    aspect: "aspect-video",
+    isEmbed: true,
   },
 ];
 
@@ -129,17 +120,33 @@ const Gallery = () => {
             {t.videoGallery}
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 gap-8">
             {videos.map((video) => (
               <div key={video.id} className="space-y-3">
-                <div className="relative bg-black rounded-lg overflow-hidden">
-                  <video
-                    src={video.src}
-                    controls
-                    className={`w-full ${video.aspect} rounded-lg`}
-                    preload="metadata"
-                  />
-                </div>
+                {video.isEmbed ? (
+                  <div className="relative bg-black rounded-lg overflow-hidden">
+                    <img src="/thum.png" alt="Thumbnail" className="w-full aspect-video object-cover" />
+                    <a 
+                      href="https://drive.google.com/file/d/1LlJhMcahAol4KfS8xvIRVdW-G2tPxH8a/preview" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="absolute inset-0 flex items-center justify-center"
+                    >
+                      <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:scale-110 transition-transform">
+                        <Play className="w-8 h-8 text-white ml-1" fill="white" />
+                      </div>
+                    </a>
+                  </div>
+                ) : (
+                  <div className="relative bg-black rounded-lg overflow-hidden">
+                    <video
+                      src={video.src}
+                      controls
+                      className={`w-full ${video.aspect} rounded-lg`}
+                      preload="metadata"
+                    />
+                  </div>
+                )}
                 <p className="text-center text-sm font-medium text-foreground">
                   {t[video.titleKey]}
                 </p>
