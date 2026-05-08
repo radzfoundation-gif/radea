@@ -113,6 +113,10 @@ const Index = () => {
   const [videoModalOpen, setVideoModalOpen] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState<"introducing" | null>(null);
 
+  // Contact Form State
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [formStatus, setFormStatus] = useState<"idle" | "sending" | "sent">("idle");
+
   const t = translations[language];
 
   // Audio Player State
@@ -395,6 +399,24 @@ const Index = () => {
                   <h4 className="font-medium text-foreground text-sm line-clamp-2">IOE-Microsoft AI Fluency Training</h4>
                 </div>
               </div>
+              <div className="bg-secondary/20 border border-border/50 rounded-2xl overflow-hidden hover:shadow-md transition-shadow group relative">
+                <div className="aspect-[4/3] w-full bg-muted/50 flex items-center justify-center relative overflow-hidden">
+                  <img 
+                    src="/certificates/sertifikat3.png" 
+                    alt="Certificate 3" 
+                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span className="bg-background/90 text-foreground px-4 py-2 rounded-lg font-medium text-sm flex items-center gap-2">
+                      <Eye className="w-4 h-4" />
+                      {language === "id" ? "Sertifikat Tidak Tersedia" : "Certificate Unavailable"}
+                    </span>
+                  </div>
+                </div>
+                <div className="p-4">
+                  <h4 className="font-medium text-foreground text-sm line-clamp-2">Webinar Kelas Tanya DomaiNesia: Membangun Skill Dasar Coding untuk Pengembangan Aplikasi Web</h4>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -404,8 +426,8 @@ const Index = () => {
               <Briefcase className="w-5 h-5" />
               {t.featuredProject}
             </h3>
-            <div className="bg-secondary/20 border border-border/50 rounded-2xl overflow-hidden hover:bg-secondary/40 transition-colors group flex flex-col">
-              <div className="w-full h-48 bg-muted/50 relative shrink-0">
+            <div className="bg-secondary/20 border border-border/50 rounded-2xl overflow-hidden hover:bg-secondary/40 transition-colors group flex flex-col md:flex-row">
+              <div className="w-full md:w-1/2 h-48 md:h-auto bg-muted/50 relative shrink-0">
                 <div className="absolute inset-0 bg-gradient-to-bl from-blue-500/10 to-transparent"></div>
                 <div className="w-full h-full flex items-center justify-center text-muted-foreground/30">
                   <Briefcase className="w-12 h-12" />
@@ -484,23 +506,58 @@ const Index = () => {
           <div id="tour-contact" className="mt-12 pt-8 border-t border-border">
             <h3 className="text-xl font-medium text-foreground mb-6">{t.connect}</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-              <form className="md:col-span-2 space-y-4">
+              <form className="md:col-span-2 space-y-4" onSubmit={(e) => {
+                  e.preventDefault();
+                  const subject = encodeURIComponent(`Portfolio Contact from ${formData.name}`);
+                  const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`);
+                  window.location.href = `mailto:radzfoundation@gmail.com?subject=${subject}&body=${body}`;
+                  setFormStatus("sent");
+                  setTimeout(() => { setFormStatus("idle"); setFormData({ name: "", email: "", message: "" }); }, 3000);
+                }}>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-1.5">
                     <label htmlFor="name" className="text-sm font-medium text-foreground">{t.name}</label>
-                    <input type="text" id="name" className="w-full bg-background border border-border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary" placeholder={t.placeholderName} />
+                    <input 
+                      type="text" 
+                      id="name" 
+                      className="w-full bg-background border border-border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary" 
+                      placeholder={t.placeholderName}
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      required
+                    />
                   </div>
                   <div className="space-y-1.5">
                     <label htmlFor="email" className="text-sm font-medium text-foreground">{t.email}</label>
-                    <input type="email" id="email" className="w-full bg-background border border-border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary" placeholder={t.placeholderEmail} />
+                    <input 
+                      type="email" 
+                      id="email" 
+                      className="w-full bg-background border border-border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary" 
+                      placeholder={t.placeholderEmail}
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      required
+                    />
                   </div>
                 </div>
                 <div className="space-y-1.5">
                   <label htmlFor="message" className="text-sm font-medium text-foreground">{t.message}</label>
-                  <textarea id="message" rows={4} className="w-full bg-background border border-border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary resize-none" placeholder={t.placeholderMessage}></textarea>
+                  <textarea 
+                    id="message" 
+                    rows={4} 
+                    className="w-full bg-background border border-border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary resize-none" 
+                    placeholder={t.placeholderMessage}
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    required
+                  ></textarea>
                 </div>
-                <button type="button" className="bg-primary text-primary-foreground font-medium px-6 py-2 rounded-md hover:bg-primary/90 transition-colors text-sm">
-                  {t.sendMessage}
+                <button 
+                  type="submit" 
+                  className="bg-primary text-primary-foreground font-medium px-6 py-2 rounded-md hover:bg-primary/90 transition-colors text-sm disabled:opacity-50"
+                  disabled={formStatus === "sending"}
+                >
+                  {formStatus === "sent" ? (language === "id" ? "Terkirim!" : "Sent!") : t.sendMessage}
                 </button>
               </form>
             </div>
