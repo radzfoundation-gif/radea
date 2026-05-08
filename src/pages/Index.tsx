@@ -53,7 +53,7 @@ const translations = {
     ],
     projectDescription: "Asisten AI cerdas yang dirancang menyerupai pengalaman ChatGPT, Claude, dan Perplexity. Menghadirkan interaksi percakapan natural dan pencarian informasi tingkat lanjut.",
     videoDemo: "Demo Video",
-    introducingVideo: "Video Perkenalan",
+    introducingVideo: "Introducing NOIR AI",
     noirAiDemo: "Demo Noir AI",
     watchVideo: "Tonton Video",
     noirAiTech: "Next.js, React.js, Tailwind CSS, TypeScript, Node.js, Firebase, LLM API (OpenAI/Anthropic)",
@@ -91,7 +91,7 @@ const translations = {
     ],
     projectDescription: "Intelligent AI assistant designed to resemble experiences like ChatGPT, Claude, and Perplexity. Delivers natural conversational interactions and advanced information retrieval.",
     videoDemo: "Video Demo",
-    introducingVideo: "Introducing Video",
+    introducingVideo: "Introducing NOIR AI",
     noirAiDemo: "Noir AI Demo",
     watchVideo: "Watch Video",
     noirAiTech: "Next.js, React.js, Tailwind CSS, TypeScript, Node.js, Firebase, LLM API (OpenAI/Anthropic)",
@@ -109,7 +109,7 @@ const Index = () => {
   const [statusModalOpen, setStatusModalOpen] = useState(false);
   const [language, setLanguage] = useState<"id" | "en">("id");
   const [videoModalOpen, setVideoModalOpen] = useState(false);
-  const [selectedVideo, setSelectedVideo] = useState<"introducing" | "noir-ai" | null>(null);
+  const [selectedVideo, setSelectedVideo] = useState<"introducing" | null>(null);
 
   const t = translations[language];
 
@@ -431,7 +431,7 @@ const Index = () => {
                 {/* Video Section - Clickable Thumbnails */}
                 <div className="mb-5">
                   <p className="text-xs font-medium text-muted-foreground mb-2">{t.videoDemo}</p>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div className="grid grid-cols-1 gap-3">
                     <button
                       onClick={() => { setSelectedVideo("introducing"); setVideoModalOpen(true); }}
                       className="relative group rounded-lg overflow-hidden bg-black aspect-video hover:ring-2 hover:ring-primary transition-all"
@@ -443,19 +443,6 @@ const Index = () => {
                       </div>
                       <div className="absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-black/80 to-transparent">
                         <p className="text-xs text-white font-medium">{t.introducingVideo}</p>
-                      </div>
-                    </button>
-                    <button
-                      onClick={() => { setSelectedVideo("noir-ai"); setVideoModalOpen(true); }}
-                      className="relative group rounded-lg overflow-hidden bg-black aspect-video hover:ring-2 hover:ring-primary transition-all"
-                    >
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform">
-                          <Play className="w-6 h-6 text-white ml-1" fill="white" />
-                        </div>
-                      </div>
-                      <div className="absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-black/80 to-transparent">
-                        <p className="text-xs text-white font-medium">{t.noirAiDemo}</p>
                       </div>
                     </button>
                   </div>
@@ -554,23 +541,15 @@ const Index = () => {
         <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle>
-              {selectedVideo === "introducing" ? t.introducingVideo : t.noirAiDemo}
+              {t.introducingVideo}
             </DialogTitle>
           </DialogHeader>
           <div className="space-y-4">
-            {selectedVideo === "introducing" ? (
-              <iframe 
-                src="https://drive.google.com/file/d/1LlJhMcahAol4KfS8xvIRVdW-G2tPxH8a/preview" 
-                className="w-full aspect-video rounded-lg bg-black"
-                allow="autoplay"
-              />
-            ) : (
-              <video
-                src="/NOIR AI - Google Chrome 2026-02-01 14-14-01.mp4"
-                controls
-                className="w-full aspect-video rounded-lg bg-black"
-              />
-            )}
+            <iframe 
+              src="https://drive.google.com/file/d/1LlJhMcahAol4KfS8xvIRVdW-G2tPxH8a/preview" 
+              className="w-full aspect-video rounded-lg bg-black"
+              allow="autoplay"
+            />
             <div className="bg-secondary/30 rounded-lg p-4 border border-border">
               <h4 className="font-medium text-foreground mb-2 flex items-center gap-2">
                 <Code2 className="w-4 h-4" />
