@@ -21,6 +21,7 @@ const translations = {
     noirAiDesc: "Asisten AI cerdas yang dirancang menyerupai pengalaman ChatGPT, Claude, dan Perplexity. Menghadirkan interaksi percakapan natural dan pencarian informasi tingkat lanjut.",
     noirDevDesc: "Layanan pengembangan aplikasi dan web profesional. Dirancang dengan estetika minimalis dan performa tinggi untuk berbagai kebutuhan bisnis.",
     ravoraDesc: "Sistem aplikasi web modern yang cepat dan interaktif. Menyediakan solusi cerdas untuk manajemen konten dan pengalaman pengguna tingkat lanjut.",
+    noirStudioDesc: "Platform AI Photo Studio berbasis web yang mengubah foto biasa menjadi hasil studio profesional dalam hitungan menit. Fokus MVP dimulai dari niche Baby Studio.",
   },
   en: {
     home: "Home",
@@ -38,6 +39,7 @@ const translations = {
     noirAiDesc: "Intelligent AI assistant designed to resemble experiences like ChatGPT, Claude, and Perplexity. Delivers natural conversational interactions and advanced information retrieval.",
     noirDevDesc: "Professional application and web development services. Designed with minimalist aesthetics and high performance for various business needs.",
     ravoraDesc: "Fast and interactive modern web application system. Provides smart solutions for content management and advanced user experiences.",
+    noirStudioDesc: "Web-based AI Photo Studio platform that transforms ordinary photos into professional studio results in minutes. MVP focuses on Baby Studio niche.",
   }
 };
 
@@ -259,6 +261,37 @@ const Projects = () => {
                     <span className="text-[11px] px-2 py-0.5 rounded-full bg-background border border-border text-muted-foreground">Platform</span>
                     <span className="text-[11px] px-2 py-0.5 rounded-full bg-background border border-border text-muted-foreground">Vercel</span>
                   </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Project 6 - Noir Studio */}
+            <div className="bg-secondary/20 border border-border/50 rounded-2xl overflow-hidden hover:bg-secondary/40 transition-colors group flex flex-col">
+              <div className="w-full h-40 bg-muted/50 relative shrink-0">
+                <div className="absolute inset-0 bg-gradient-to-tr from-violet-500/10 to-transparent"></div>
+                <div className="w-full h-full flex items-center justify-center text-muted-foreground/30">
+                  <Briefcase className="w-10 h-10" />
+                </div>
+              </div>
+              <div className="p-6 flex flex-col flex-1">
+                <div className="flex justify-between items-start mb-1">
+                  <span className="text-xs font-medium text-muted-foreground block">SaaS / Web App</span>
+                  <div className="flex gap-1.5">
+                    <span className="text-[10px] px-1.5 py-0.5 rounded bg-violet-500/10 text-violet-600 dark:text-violet-400 font-semibold border border-violet-500/20">Ongoing</span>
+                    <span className="text-[10px] px-1.5 py-0.5 rounded bg-foreground/5 text-foreground/70 font-medium border border-border">Solo Dev</span>
+                  </div>
+                </div>
+                <h3 className="text-lg font-medium text-foreground mb-2 flex items-center justify-between">
+                  Noir Studio AI
+                </h3>
+                <p className="text-sm text-muted-foreground mb-4 flex-1">
+                  {t.noirStudioDesc}
+                </p>
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  <span className="text-[11px] px-2 py-0.5 rounded-full bg-background border border-border text-muted-foreground">Next.js</span>
+                  <span className="text-[11px] px-2 py-0.5 rounded-full bg-background border border-border text-muted-foreground">AI/SaaS</span>
+                  <span className="text-[11px] px-2 py-0.5 rounded-full bg-background border border-border text-muted-foreground">Supabase</span>
+                  <span className="text-[11px] px-2 py-0.5 rounded-full bg-background border border-border text-muted-foreground">Midtrans</span>
                 </div>
               </div>
             </div>

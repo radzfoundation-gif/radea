@@ -52,6 +52,7 @@ const translations = {
       "Sangat termotivasi, cepat belajar, dan antusias untuk berkembang sambil berkontribusi pada aplikasi yang bersih, mudah dipelihara, dan berfokus pada pengguna."
     ],
     projectDescription: "Asisten AI cerdas yang dirancang menyerupai pengalaman ChatGPT, Claude, dan Perplexity. Menghadirkan interaksi percakapan natural dan pencarian informasi tingkat lanjut.",
+    noirStudioDesc: "Platform AI Photo Studio berbasis web yang mengubah foto biasa menjadi hasil studio profesional dalam hitungan menit.",
     videoDemo: "Demo Video",
     introducingVideo: "Introducing NOIR AI",
     noirAiDemo: "Demo Noir AI",
@@ -90,6 +91,7 @@ const translations = {
       "Highly motivated, fast learner, and enthusiastic about growing while contributing to clean, maintainable, and user-focused applications."
     ],
     projectDescription: "Intelligent AI assistant designed to resemble experiences like ChatGPT, Claude, and Perplexity. Delivers natural conversational interactions and advanced information retrieval.",
+    noirStudioDesc: "Web-based AI Photo Studio platform that transforms ordinary photos into professional studio results in minutes.",
     videoDemo: "Video Demo",
     introducingVideo: "Introducing NOIR AI",
     noirAiDemo: "Noir AI Demo",
@@ -454,6 +456,26 @@ const Index = () => {
                   <span className="text-xs px-2.5 py-1 rounded-md bg-background border border-border text-muted-foreground">Full-Stack</span>
                   <span className="text-xs px-2.5 py-1 rounded-md bg-background border border-border text-muted-foreground">React</span>
                 </div>
+              </div>
+            </div>
+
+            {/* Project 2 - Noir Studio */}
+            <div className="bg-card border border-border rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-[10px] px-2 py-0.5 rounded bg-violet-500/10 text-violet-600 dark:text-violet-400 font-semibold border border-violet-500/20">Ongoing</span>
+                <span className="text-[10px] px-2 py-0.5 rounded bg-foreground/5 text-muted-foreground font-medium border border-border">SaaS</span>
+              </div>
+              <h3 className="text-xl font-medium text-foreground mb-3">
+                Noir Studio AI
+              </h3>
+              <p className="text-sm text-muted-foreground mb-4 flex-1 leading-relaxed">
+                {t.noirStudioDesc}
+              </p>
+              <div className="flex flex-wrap gap-2 mt-auto">
+                <span className="text-xs px-2.5 py-1 rounded-md bg-background border border-border text-muted-foreground">Next.js</span>
+                <span className="text-xs px-2.5 py-1 rounded-md bg-background border border-border text-muted-foreground">AI/SaaS</span>
+                <span className="text-xs px-2.5 py-1 rounded-md bg-background border border-border text-muted-foreground">Supabase</span>
+                <span className="text-xs px-2.5 py-1 rounded-md bg-background border border-border text-muted-foreground">Midtrans</span>
               </div>
             </div>
           </div>
