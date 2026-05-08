@@ -243,9 +243,12 @@ const Index = () => {
           
           <div className="w-24 h-24 md:w-32 md:h-32 rounded-[1.25rem] bg-secondary overflow-hidden shrink-0 border border-border shadow-sm p-1">
             <div className="w-full h-full rounded-[1rem] overflow-hidden relative">
-              <img 
-                src="/avatar.png" 
-                alt="Avatar"
+              <video 
+                src="/avatar.webm" 
+                autoPlay 
+                loop 
+                muted 
+                playsInline
                 className="w-full h-full object-cover"
               />
               <div className="absolute -bottom-1.5 -right-1.5 w-8 h-8 rounded-full bg-green-500 border-[3px] border-background flex items-center justify-center shadow-lg z-20">
